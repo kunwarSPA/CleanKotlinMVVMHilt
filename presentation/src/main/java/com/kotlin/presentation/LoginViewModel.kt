@@ -1,6 +1,5 @@
 package com.kotlin.presentation
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.kotlin.core.addTo
@@ -10,9 +9,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import com.kotlin.domain.result.Result
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-
-class LoginViewModel @ViewModelInject constructor(private val loginUseCase: LoginUseCase): ViewModel(){
+@HiltViewModel
+class LoginViewModel  @Inject constructor(private val loginUseCase: LoginUseCase): ViewModel(){
 
 
      val loginStatus = MutableLiveData<String?>()

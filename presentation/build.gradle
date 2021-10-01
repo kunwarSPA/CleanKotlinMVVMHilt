@@ -4,12 +4,11 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 android {
-    compileSdkVersion 31
-    buildToolsVersion "31.0.0"
+    compileSdkVersion 30
 
     defaultConfig {
         minSdkVersion 17
-        targetSdkVersion 31
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -28,7 +27,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
@@ -68,11 +67,11 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
     implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
     //jackson
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.10.1'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.10.2'
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.10.1'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.1'
-    implementation "androidx.navigation:navigation-fragment-ktx:2.3.1"
-    implementation "androidx.navigation:navigation-ui-ktx:2.3.1"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
 
 
 
@@ -84,8 +83,7 @@ dependencies {
     //Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
-    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02'
-    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
 
 
 
@@ -100,7 +98,7 @@ dependencies {
     //kapt "androidx.room:room-compiler:2.2.5"
 
     androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
-    androidTestImplementation "androidx.test:core-ktx:1.3.0"
+    androidTestImplementation "androidx.test:core-ktx:1.4.0"
 
     //Glide
     //implementation 'com.github.bumptech.glide:glide:4.11.0'
